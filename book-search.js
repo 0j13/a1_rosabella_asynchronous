@@ -1,12 +1,28 @@
+function addText(parent, tag, text) {
+    const element = document.createElement(tag);
+    element.textContent = text;
+    parent.append(element);
+    return element;
+}
+
+// Define page elements
 const searchBar = document.getElementById('search-bar');
 const card = document.getElementById('card'); 
-const searchButton = document.getElementById('search-button');
+const status = document.getElementById('status');
 
-// Get the search bar information
-searchBar.addEventListener('keyup', function() {
-    const title = searchBar.value.toLowerCase();
-});
 
+
+searchBar.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // Retrieve user input
+    const userInput = document.getElementById('search-bar').value;
+    const titleText = userInput.toLowerCase().split(" ").join("+");
+
+    // Create a URL using the user input
+    const url = `https://openlibrary.org/search.json?q=${titleText}&limit=15&lang=en`;
+
+})
 
 // Collect information about the books
 async function main() {

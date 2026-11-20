@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Search</title>
-    <!-- Links to book-search.css and book-search js -->
+    <!-- Links to book-search.css -->
     <link rel="stylesheet" href="book-search.css">
-    <script src="book-search.js"></script>
+    
 </head>
 <!--  -->
 <body>
     <!-- Search bar -->
     <div id="searchWrapper">
-        <input id="search-bar" name="search-bar" type="text" placeholder="Search">
-        <button id="search-button" type="submit" onclick="addText()"></button>
+        <input id="search-bar" type="search" placeholder="Search for books">
+        <button id="search-button" type="submit">Search</button>
     </div>
+
     <!-- Card that will append all info -->
-    <div id="card">
-    </div>
+    <div id="card"></div>
+
+    <!-- Element that will show status while content is loading -->
+     <p id="status" role="status"></p>
+     
+    <!-- Link to book-search.js -->
+    <script src="book-search.js"></script>
 </body>
 </html>
