@@ -22,6 +22,22 @@ searchBar.addEventListener('submit', async (event) => {
     // Create a URL using the user input
     const url = `https://openlibrary.org/search.json?q=${titleText}&limit=15&lang=en`;
 
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const bookTitles = await response.json();
+
+        if (bookTitles.docs.length === 0) {
+            status.textContent = 'No books found';
+            return;
+        }
+
+        
+    }
 })
 
 // Collect information about the books
