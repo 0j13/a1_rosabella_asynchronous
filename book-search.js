@@ -57,27 +57,9 @@ searchBar.addEventListener('submit', async (event) => {
 
             cards.append(content);
         }
+    } catch (error) {
+        console.error('Book search failed:', error);
+        status.textContent = 'Could not load any books. Try again';
     }
-})
-
-// Collect information about the books
-async function main() {
-
-    let ;
-    try {
-        const response = await fetch('');
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-    }
-
     
-};
-// endpoints: 
-
-// Add text based on the book title 
-// function addText() {
-//     .innerHTML += `<p></p>`
-
-// };
-
-// Removes the text and replaces it with the new content when a new book is searched
+})
