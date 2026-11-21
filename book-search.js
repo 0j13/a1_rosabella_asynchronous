@@ -56,13 +56,6 @@ search.addEventListener('submit', async (event) => {
             const coverId = book.cover_i;
             const publishYear = book.first_publish_year ?? 'Unknown';
 
-            // Book title
-            addText(content, 'h2', title);
-            // Author name
-            addText(content, 'p', `Author: ${authorName}`);
-            // Date published
-            addText(content, 'p', `Publish date: ${publishYear}`);
-
             // Add image
             if (book.cover_i) {
                 const image = document.createElement('img');
@@ -70,6 +63,13 @@ search.addEventListener('submit', async (event) => {
                 image.alt = `Book cover of ${title}`;
                 content.append(image);
             }
+
+            // Book title
+            addText(content, 'h2', title);
+            // Author name
+            addText(content, 'p', `Author: ${authorName}`);
+            // Date published
+            addText(content, 'p', `Publish date: ${publishYear}`);
 
             // Adds content to each card
             cards.append(content);
