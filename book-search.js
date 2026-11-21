@@ -1,3 +1,4 @@
+// Adds content to a card
 function addText(parent, tag, text) {
     const element = document.createElement(tag);
     element.textContent = text;
@@ -7,9 +8,8 @@ function addText(parent, tag, text) {
 
 // Define page elements
 const search = document.getElementById('searchWrapper');
-const card = document.getElementById('card'); 
+const cards = document.getElementById('card'); 
 const status = document.getElementById('status');
-
 
 // EventListener that runs when 'Search' is clicked
 search.addEventListener('submit', async (event) => {
@@ -51,28 +51,31 @@ search.addEventListener('submit', async (event) => {
             content.classList.add('content');
 
             // Define variables
-            const title = book.title;
-            const authorName = book.author_name;
+            const title = book.title ?? 'Untitled';
+            const authorName = book.author_name?.join(', ') ?? 'Unknown';
             const coverId = book.cover_i;
-            const publishYear = book.first_publish_year;
+            const publishYear = book.first_publish_year ?? 'Unknown';
 
             // Book title
-            addLine(content, 'h2', title);
+            addText(content, 'h2', title);
             // Author name
-            addLine(content, 'p', `Author: ${authorName}`);
+            addText(content, 'p', `Author: ${authorName}`);
             // Date published
-            addLine(content, 'p', `Publish date: ${publishYear}`);
+            addText(content, 'p', `Publish date: ${publishYear}`);
 
             // Add image
-            const image = document.createElement('img');
-            image.src = `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`;
-            image.alt = `Book cover of ${title}`;
-            content.append(image);
+            if (book.cover_i) {
+                const image = document.createElement('img');
+                image.src = `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`;
+                image.alt = `Book cover of ${title}`;
+                content.append(image);
+            }
 
             // Adds content to each card
             cards.append(content);
         }
 
+    // Error if the search failed
     } catch (error) {
         console.error('Book search failed:', error);
         status.textContent = 'Could not load any books. Try again';
