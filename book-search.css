@@ -61,6 +61,7 @@ h1 {
     padding-top: 1rem;
 }
 
+/* Search bar section */
 #searchWrapper {
     margin-bottom: 5rem;
 }
@@ -88,6 +89,7 @@ h1 {
     box-shadow: 0rem 0rem .5rem var(--shadow);
 }
 
+/* Card section */
 #card img {
     width: 10rem;
     border-radius: .5rem;
