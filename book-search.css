@@ -1,4 +1,186 @@
-/* .topnav input[type=text] {
-    padding: 6px;
-    font-size: 17px;
-} */
+/* Mobile / All Screen */
+:root {
+    --text-default: #0C0404;
+    --text-subtitle: #676768;
+    --background: #ffffff;
+    --light: #F4F2F0;
+    --accent: #2563EB;
+    --secondary: #96B4F6;
+    --shadow: #ccc;
+}
+
+body, html {
+    font-family: "Lato", sans-serif;
+    font-size: .9rem;
+
+    color: var(--text-default);
+    background-color: var(--background);
+
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: 0 auto;
+    padding: 0;
+
+    min-height: 606px;
+    max-height: auto;
+
+    min-width: 320px;
+    max-width: 2260px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--accent);
+    color: var(--secondary);
+    
+    font-weight: 600;
+    padding: 0rem 2rem;
+}
+
+h1 {
+    font-family: "Libre Baskerville", serif;
+    font-size: 2.25rem;
+    font-weight: 200;
+}
+
+#center {
+    text-align: center;
+    background-color: var(--light);
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+}
+
+#elements {
+    margin: 1rem 2rem;
+    padding-top: 1rem;
+}
+
+#searchWrapper {
+    margin-bottom: 5rem;
+}
+
+#search-bar {
+    padding: .55rem .8rem;
+    font-size: .9rem;
+    border-radius: 2rem;
+    box-shadow: 0rem 0rem .5rem var(--shadow);
+    border: .5px solid var(--shadow);
+    margin-right: .25rem;
+    width: 15rem;
+}
+
+#search-icon {
+    height: 1rem;
+    width: 1rem;
+}
+
+#search-button {
+    border-radius: 5rem;
+    padding: .5rem;
+    background-color: var(--background);
+    border: .5px solid var(--shadow);
+    box-shadow: 0rem 0rem .5rem var(--shadow);
+}
+
+#card img {
+    width: 10rem;
+    border-radius: .5rem;
+    display: block;
+}
+
+article div {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+    justify-content: start;
+    justify-items: start;
+} 
+
+#card p {
+    color: var(--text-subtitle);
+    font-weight: 500;
+    line-height: .5rem;
+}
+
+#card h2 {
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.25rem;
+    padding-top: .5rem;
+    font-weight: 900;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--shadow);
+    margin: 4rem 0;
+}
+
+/* Medium Screen */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* All */
+    body {
+        font-size: 1rem;
+    }
+
+    header {
+        padding: 0rem 3rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    #card h2 {
+        font-size: 1.5rem;
+    }
+
+    #elements {
+        margin: 1rem 3rem;
+    }
+
+    #search-bar {
+        font-size: 1.1rem;
+        width: 20rem;
+    }
+
+    #card img {
+        width: 7rem;
+    }
+}
+
+/* Large Screen */
+@media screen and (min-width: 1024px) {
+    /* All */
+    body {
+        font-size: 1rem;
+    }
+
+    header {
+        padding: 0rem 4.5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    #card h2 {
+        font-size: 1.5rem;
+    }
+
+    #elements {
+        margin: 1rem 9rem;
+    }
+
+    #search-bar {
+        font-size: 1.1rem;
+        width: 20rem;
+    }
+}

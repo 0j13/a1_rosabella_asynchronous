@@ -7,20 +7,43 @@
     <!-- Links to book-search.css -->
     <link rel="stylesheet" href="book-search.css">
     
+    <!-- Lato Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Libre Baskerville Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
-<!--  -->
+
 <body>
-    <!-- Search bar -->
-    <form id="searchWrapper">
-        <input id="search-bar" type="search" placeholder="Search for books">
-        <button id="search-button" type="submit">Search</button>
-    </form>
+    <!-- Header -->
+    <header id="header">
+        <p>MULT 213</p>
+        <p>Book Search</p>
+        <p>A1</p>
+    </header>
 
-    <!-- Card that will append all info -->
-    <div id="card"></div>
+    <!-- Page content -->
+    <section>
+        <div id="center">
+            <h1>Find your next <em>read</em></h1>
 
-    <!-- Element that will show status while content is loading -->
-     <p id="status" role="status"></p>
+            <!-- Search bar -->
+            <form id="searchWrapper">
+                <input id="search-bar" type="search" placeholder="Search for books">
+                <button id="search-button" type="submit">
+                    <!-- Search -->
+                     <img id="search-icon" src="assets/search.png" alt="search">
+                </button>
+            </form>
+        </div>
+
+        <div id="elements">
+            <!-- Card that will append all info -->
+            <div id="card"></div>
+
+            <!-- Element that will show status while content is loading -->
+            <p id="status" role="status"></p>
+        </div>
+     </section>
 
     <!-- Link to book-search.js -->
     <script src="book-search.js"></script>

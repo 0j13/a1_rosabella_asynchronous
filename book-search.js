@@ -56,20 +56,30 @@ search.addEventListener('submit', async (event) => {
             const coverId = book.cover_i;
             const publishYear = book.first_publish_year ?? 'Unknown';
 
+            // Creates a div element
+            const div = document.createElement('div');
+            content.append(div);
+
             // Add image
             if (book.cover_i) {
                 const image = document.createElement('img');
                 image.src = `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`;
                 image.alt = `Book cover of ${title}`;
-                content.append(image);
+                div.append(image)
             }
 
+            // Creates a section  element
+            const section = document.createElement('section');
+            div.append(section);
+
             // Book title
-            addText(content, 'h2', title);
+            addText(section, 'h2', title);
             // Author name
-            addText(content, 'p', `Author: ${authorName}`);
+            addText(section, 'p', `Author: ${authorName}`);
             // Date published
-            addText(content, 'p', `Publish date: ${publishYear}`);
+            addText(section, 'p', `Publish date: ${publishYear}`);
+            // Separator
+            addText(content, 'hr', " ");
 
             // Adds content to each card
             cards.append(content);
