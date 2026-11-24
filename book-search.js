@@ -61,7 +61,7 @@ search.addEventListener('submit', async (event) => {
             content.append(div);
 
             // Add image
-            if (book.cover_i) {
+            if (coverId) {
                 const image = document.createElement('img');
                 image.src = `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`;
                 image.alt = `Book cover of ${title}`;
